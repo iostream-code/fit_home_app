@@ -29,47 +29,12 @@ class ActivityPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),
-        child: ListView.builder(
-          itemCount: images.length,
-          itemBuilder: (context, index) {
-            return CarouselSlider(
+        child: ListView(
+          children: [
+            CarouselSlider(
               items: [
-                imageCarousel(images[index]),
-                // //1st Image of Slider
-                // Container(
-                //   margin: const EdgeInsets.all(6.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.0),
-                //     image: const DecorationImage(
-                //       image: AssetImage("assets/images/running.jpg"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-                // //2nd Image of Slider
-                // Container(
-                //   margin: const EdgeInsets.all(6.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.0),
-                //     image: const DecorationImage(
-                //       image: AssetImage("assets/images/walking.jpeg"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-                // //3rd Image of Slider
-                // Container(
-                //   margin: const EdgeInsets.all(6.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.0),
-                //     image: const DecorationImage(
-                //       image: AssetImage("assets/images/body_workout.jpg"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
+                for (var img in images) imageCarousel(img),
               ],
-              //Slider Container properties
               options: CarouselOptions(
                 height: 180.0,
                 enlargeCenterPage: true,
@@ -80,8 +45,8 @@ class ActivityPage extends StatelessWidget {
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );
