@@ -20,9 +20,9 @@ class _NavbarState extends State<Navbar> {
       },
       indicatorColor: Colors.red[200],
       selectedIndex: pageIndex,
-      destinations: [
+      destinations: const [
         NavigationDestination(
-          icon: const Badge(
+          icon: Badge(
             child: Icon(Icons.notifications_sharp),
           ),
           label: 'Activity',
