@@ -14,7 +14,7 @@ class RecentActivity extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Recent Activity',
                   style: TextStyle(
                     fontSize: 16,
@@ -23,14 +23,14 @@ class RecentActivity extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.add,
                     size: 24,
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Expanded(
@@ -62,13 +62,13 @@ Widget activityCard() {
           width: 56.0,
         ),
       ),
-      title: Text(
+      title: const Text(
         'Two-line ListTile',
         style: TextStyle(
           color: Colors.black,
         ),
       ),
-      subtitle: Text(
+      subtitle: const Text(
         'Here is a second line',
         style: TextStyle(
           color: Colors.black,
@@ -77,7 +77,10 @@ Widget activityCard() {
       ),
       trailing: IconButton(
         onPressed: () {},
-        icon: Icon(Icons.more_vert),
+        icon: const Icon(
+          Icons.more_vert,
+          size: 20,
+        ),
         color: Colors.black,
       ),
     ),

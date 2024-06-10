@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fit_home_app/pages/home_page/widgets/recent_activity.dart';
-import 'package:fit_home_app/pages/widgets/navbar.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -49,7 +48,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const Navbar(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:fit_home_app/pages/widgets/navbar.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,8 +12,16 @@ class ActivityPage extends StatefulWidget {
 }
 
 class _ActivityPageState extends State<ActivityPage> {
+  final List<Image> carouselItems = [
+    Image.asset('/assets/images/running.jpg'),
+    Image.asset('/assets/images/walking.jpeg'),
+    Image.asset('/assets/images/body_workout.jpg'),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -25,19 +33,29 @@ class _ActivityPageState extends State<ActivityPage> {
         ),
         backgroundColor: Colors.redAccent,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 4.0,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(child: Text('This is Activity Page')),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          // Other widgets
+          CarouselSlider(
+            items: carouselItems,
+            options: CarouselOptions(
+              height: size.height * 0.2, // Customize the height of the carousel
+              autoPlay: true, // Enable auto-play
+              enlargeCenterPage: true, // Increase the size of the center item
+              enableInfiniteScroll: true, // Enable infinite scroll
+              onPageChanged: (index, reason) {
+                return Text(
+                  carouselItems[index] as String,
+                );
+                // Optional callback when the page changes
+                // You can use it to update any additional UI components
+              },
+            ),
+          ),
+          // Other widgets
+        ],
       ),
-      bottomNavigationBar: const Navbar(),
     );
   }
 }
